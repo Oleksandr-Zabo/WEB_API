@@ -1,0 +1,121 @@
+.genre-form {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.genre-form h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333333;
+}
+
+.genre-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.genre-form .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #555555;
+}
+
+.genre-form .form-group input,
+.genre-form .form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.genre-form .form-group input:focus,
+.genre-form .form-group textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.genre-form .form-group input:disabled,
+.genre-form .form-group textarea:disabled {
+  background-color: #f5f5f5;
+  color: #999999;
+  cursor: not-allowed;
+}
+
+.genre-form .form-group input.input-error {
+  border-color: #e74c3c;
+}
+
+.genre-form .form-group input.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.genre-form .error-message {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #e74c3c;
+  font-weight: 500;
+}
+
+.genre-form .form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.genre-form .form-actions button {
+  flex: 1;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  font-size: 0.875rem;
+}
+
+.btn-primary {
+  background-color: #4a90e2;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #357abd;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .genre-form {
+    padding: 1.5rem;
+  }
+
+  .genre-form h2 {
+    font-size: 1.25rem;
+  }
+}

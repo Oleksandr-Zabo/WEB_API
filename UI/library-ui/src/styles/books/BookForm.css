@@ -1,0 +1,129 @@
+.book-form {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.book-form h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333333;
+}
+
+.book-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.book-form .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #555555;
+}
+
+.book-form .form-group input,
+.book-form .form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.book-form .form-group input:focus,
+.book-form .form-group select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.book-form .form-group input:disabled,
+.book-form .form-group select:disabled {
+  background-color: #f5f5f5;
+  color: #999999;
+  cursor: not-allowed;
+}
+
+.book-form .form-group input.input-error,
+.book-form .form-group select.input-error {
+  border-color: #e74c3c;
+}
+
+.book-form .form-group input.input-error:focus,
+.book-form .form-group select.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.book-form .error-message {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #e74c3c;
+  font-weight: 500;
+}
+
+.genre-checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: #f9f9f9;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #333333;
+  cursor: pointer;
+  user-select: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.checkbox-label:hover {
+  background-color: #f0f0f0;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: auto;
+  height: 1.1rem;
+  width: 1.1rem;
+  margin-right: 0.75rem;
+  cursor: pointer;
+  accent-color: #4a90e2;
+}
+
+.checkbox-label input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.book-form .form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.book-form .form-actions button {
+  flex: 1;
+}
+
+@media (max-width: 480px) {
+  .book-form {
+    padding: 1.5rem;
+  }
+
+  .book-form h2 {
+    font-size: 1.25rem;
+  }
+}

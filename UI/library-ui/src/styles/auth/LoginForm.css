@@ -1,0 +1,134 @@
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333333;
+  text-align: center;
+}
+
+.login-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.login-form .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #555555;
+}
+
+.login-form .form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.login-form .form-group input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.login-form .form-group input:disabled {
+  background-color: #f5f5f5;
+  color: #999999;
+  cursor: not-allowed;
+}
+
+.login-form .form-group input.input-error {
+  border-color: #e74c3c;
+}
+
+.login-form .form-group input.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.login-form .error-message {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #e74c3c;
+  font-weight: 500;
+}
+
+.login-form .form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.login-form .submit-button {
+  flex: 1;
+  padding: 0.75rem;
+  background-color: #4a90e2;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form .submit-button:hover:not(:disabled) {
+  background-color: #357abd;
+}
+
+.login-form .submit-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.login-form .submit-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.login-form .signup-button {
+  flex: 1;
+  padding: 0.75rem;
+  background-color: #27ae60;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form .signup-button:hover:not(:disabled) {
+  background-color: #229954;
+}
+
+.login-form .signup-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.login-form .signup-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+  .login-form {
+    padding: 1.5rem;
+  }
+
+  .login-form h2 {
+    font-size: 1.25rem;
+  }
+}

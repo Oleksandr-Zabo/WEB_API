@@ -39,7 +39,7 @@ namespace WEB_API.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = Users.Where(x => x.Id == id).First();
+            var user = Users.Where(x => x.Id == id).FirstOrDefault();
             if (user == null)
             {
                 return BadRequest(ModelState);
@@ -58,7 +58,7 @@ namespace WEB_API.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(Guid id) 
         {
-            var user = Users.Where(x => x.Id == id).First();
+            var user = Users.Where(x => x.Id == id).FirstOrDefault();
             if (user == null) { 
                 return BadRequest(ModelState);
             }
@@ -74,7 +74,7 @@ namespace WEB_API.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
-            var user = Users.Where(x => x.Id == id).First();
+            var user = Users.Where(x => x.Id == id).FirstOrDefault();
             if (user == null)
             {
                 return BadRequest(ModelState);
