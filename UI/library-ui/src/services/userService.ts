@@ -60,6 +60,20 @@ export const userService = {
         return response.json();
     },
 
+    // Create user (Admin only) - uses register endpoint with auth
+    createUser: async (data: CreateUpdateUserRequest): Promise<User> => {
+        const response = await fetch(`${API_BASE_URL}/User/register`, {
+            method: 'POST',
+            headers: getAuthHeader(),
+            body: JSON.stringify(data),
+        });
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Failed to create user: ${errorText}`);
+        }
+        return response.json();
+    },
+
     // Update user (Self/Admin)
     updateUser: async (id: string, data: CreateUpdateUserRequest): Promise<User> => {
         const response = await fetch(`${API_BASE_URL}/User/${id}`, {

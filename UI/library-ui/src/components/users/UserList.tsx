@@ -86,10 +86,18 @@ export const UserList: React.FC = () => {
     );
   }
 
+  const handleAddUser = () => {
+    setSelectedUser(null);
+    setIsFormOpen(true);
+  };
+
   return (
     <div className="user-list-container">
       <div className="user-list-header">
         <h2>Users</h2>
+        <button className="btn btn-primary" onClick={handleAddUser}>
+          Add New User
+        </button>
       </div>
 
       {isFormOpen && (
@@ -102,6 +110,7 @@ export const UserList: React.FC = () => {
               user={selectedUser || undefined}
               onSuccess={handleFormSuccess}
               onCancel={handleCloseForm}
+              isAdminContext={true}
             />
           </div>
         </div>

@@ -13,6 +13,7 @@ interface UserFormProps {
   user?: User;
   onSuccess: () => void;
   onCancel: () => void;
+  isAdminContext?: boolean; // Indicates if called from admin panel
 }
 
 interface FormErrors {
@@ -22,7 +23,7 @@ interface FormErrors {
   password?: string;
 }
 
-export const UserForm: React.FC<UserFormProps> = ({ user, onSuccess, onCancel }) => {
+export const UserForm: React.FC<UserFormProps> = ({ user, onSuccess, onCancel, isAdminContext = false }) => {
   const { showNotification } = useNotification();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState<CreateUpdateUserRequest>({
@@ -62,7 +63,7 @@ export const UserForm: React.FC<UserFormProps> = ({ user, onSuccess, onCancel })
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
-  }, [formData, user]);
+  }, [formData]);
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -107,7 +108,12 @@ export const UserForm: React.FC<UserFormProps> = ({ user, onSuccess, onCancel })
             password: formData.password,
             isAdmin: formData.isAdmin,
           };
-          await userService.register(submitData);
+          // Use createUser for admin context, register for public registration
+          if (isAdminContext) {
+            await userService.createUser(submitData);
+          } else {
+            await userService.register(submitData);
+          }
         }
 
         onSuccess();
@@ -118,7 +124,7 @@ export const UserForm: React.FC<UserFormProps> = ({ user, onSuccess, onCancel })
         setIsLoading(false);
       }
     },
-    [validateForm, formData, user, onSuccess, showNotification]
+    [validateForm, formData, user, onSuccess, showNotification, isAdminContext]
   );
 
   return (
